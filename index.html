@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MgZ // STREET CUTS</title>
+    <!-- Fuentes estilo Graffiti y Stencil Urbano -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rubik+Dirt&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Fondo con tags de grafiti en aerosol -->
+    <div class="graffiti-wall" aria-hidden="true">
+        <span class="wall-tag tag-1">MGZ CREW</span>
+        <span class="wall-tag tag-2">NO RULES</span>
+        <span class="wall-tag tag-3">FRESH FADE</span>
+        <span class="wall-tag tag-4">UNDERGROUND</span>
+    </div>
+
+    <header class="header">
+        <div class="container header-content">
+            <div class="spray-badge">EST. 2026 // BARRIO</div>
+            <h1 class="logo">MgZ</h1>
+            <p class="tagline">CORTES CRUDOS // ESTILO DE CALLE</p>
+        </div>
+    </header>
+
+    <main class="main container">
+        <!-- Seccion de Fidelizacion estilo Sticker -->
+        <section class="card loyalty-card sticker-tilt-left" aria-label="Programa de lealtad">
+            <div class="tape"></div>
+            <h2>TARJETA DE LEALTAD // 5+1</h2>
+            <p>Te haces 5 cortes y el 6to va gratis por la casa. Sin cuentos.</p>
+            <div class="loyalty-status">
+                <span id="loyalty-counter-text">Cortes acumulados: 0 / 5</span>
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill" style="width: 0%;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Catalogo de Servicios -->
+        <section class="services-section">
+            <h2 class="graffiti-title">ELIGE TU FLOW</h2>
+            <div class="services-grid" id="services-grid"></div>
+        </section>
+
+        <!-- Formulario de Reserva -->
+        <section class="booking-section">
+            <h2 class="graffiti-title">SEPARA TU SILLA</h2>
+            <form id="booking-form" class="booking-form sticker-tilt-right" novalidate>
+                <input type="hidden" id="session-token" name="sessionToken" value="">
+
+                <div class="form-group">
+                    <label for="client-name">Tu Nombre o Apodo</label>
+                    <input type="text" id="client-name" name="clientName" required maxlength="60" placeholder="Ej. El Flaco / Kevin">
+                    <span class="error-message" id="error-name"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="client-phone">Tu WhatsApp</label>
+                    <input type="tel" id="client-phone" name="clientPhone" required maxlength="15" placeholder="Ej. 3001234567">
+                    <span class="error-message" id="error-phone"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="client-email">Tu Correo</label>
+                    <input type="email" id="client-email" name="clientEmail" required maxlength="100" placeholder="Ej. correo@dominio.com">
+                    <span class="error-message" id="error-email"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="booking-date">Dia y Hora</label>
+                    <input type="datetime-local" id="booking-date" name="bookingDate" required>
+                    <span class="error-message" id="error-date"></span>
+                </div>
+
+                <!-- Reglas de la calle -->
+                <div class="rules-box">
+                    <p><strong>1. PAGO:</strong> Solo efectivo en el local (Cash on Arrival).</p>
+                    <p><strong>2. PUNTUALIDAD:</strong> Llega 15 minutos antes o pierdes el turno.</p>
+                </div>
+
+                <div id="form-global-error" class="global-error" aria-live="polite"></div>
+
+                <button type="submit" id="submit-btn" class="btn-primary">MANDAR AL WHATSAPP</button>
+            </form>
+        </section>
+
+        <!-- Carrusel de Fotos al final -->
+        <section class="gallery-section">
+            <h2 class="graffiti-title">GALERIA DE LA CALLE</h2>
+            <p class="gallery-sub">Nuestros ultimos trabajos. Desliza o usa las flechas.</p>
+            
+            <div class="carousel-container">
+                <button type="button" class="carousel-btn prev-btn" id="prev-slide" aria-label="Anterior">&#10094;</button>
+                
+                <div class="carousel-track" id="carousel-track">
+                    <!-- Reemplaza los src con las rutas de tus fotos reales (ej: foto1.jpg) -->
+                    <div class="carousel-slide active">
+                        <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=800&q=80" alt="Corte Fade Urbano MgZ">
+                        <div class="slide-caption">MID FADE + DISENO</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=800&q=80" alt="Perfilado de Barba MgZ">
+                        <div class="slide-caption">BARBA Y NAVAJA</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80" alt="Estilo Callejero MgZ">
+                        <div class="slide-caption">FREESTYLE CUT</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=800&q=80" alt="Tinte y Estilo MgZ">
+                        <div class="slide-caption">COLOR Y TEXTURA</div>
+                    </div>
+                </div>
+
+                <button type="button" class="carousel-btn next-btn" id="next-slide" aria-label="Siguiente">&#10095;</button>
+            </div>
+            <div class="carousel-dots" id="carousel-dots"></div>
+        </section>
+    </main>
+
+    <!-- Modal de Resumen -->
+    <div id="confirmation-modal" class="modal" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <h3>TURNO SEPARADO</h3>
+            <div id="modal-body"></div>
+            <a id="whatsapp-redirect-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">ABRIR WHATSAPP YA</a>
+            <button id="modal-close-btn" class="btn-secondary">CERRAR</button>
+        </div>
+    </div>
+
+    <script src="security.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

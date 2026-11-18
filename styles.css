@@ -1,0 +1,510 @@
+:root {
+    --bg-color: #09090b;
+    --card-bg: #141418;
+    --text-primary: #f4f4f6;
+    --text-secondary: #a1a1aa;
+    --neon-yellow: #eaff00;
+    --neon-pink: #ff0055;
+    --neon-green: #00ff66;
+    --border-dark: #27272a;
+    --font-graffiti: 'Permanent Marker', cursive;
+    --font-dirty: 'Rubik Dirt', cursive;
+    --font-body: 'Space Grotesk', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    /* Textura de muro de concreto oscuro con puntos de aerosol */
+    background-image: 
+        radial-gradient(rgba(234, 255, 0, 0.06) 1px, transparent 0),
+        radial-gradient(rgba(255, 0, 85, 0.05) 1px, transparent 0);
+    background-size: 32px 32px;
+    background-position: 0 0, 16px 16px;
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.5;
+    overflow-x: hidden;
+    position: relative;
+    padding-bottom: 4rem;
+}
+
+/* Tags gigantes de grafiti en el fondo */
+.graffiti-wall {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.wall-tag {
+    position: absolute;
+    font-family: var(--font-dirty);
+    color: rgba(255, 255, 255, 0.035);
+    white-space: nowrap;
+    user-select: none;
+}
+
+.tag-1 {
+    font-size: 7rem;
+    top: 8%;
+    left: -5%;
+    transform: rotate(-14deg);
+}
+
+.tag-2 {
+    font-size: 6rem;
+    top: 38%;
+    right: -8%;
+    transform: rotate(12deg);
+    color: rgba(234, 255, 0, 0.03);
+}
+
+.tag-3 {
+    font-size: 6.5rem;
+    bottom: 22%;
+    left: -4%;
+    transform: rotate(-8deg);
+    color: rgba(255, 0, 85, 0.03);
+}
+
+.tag-4 {
+    font-size: 5.5rem;
+    bottom: 3%;
+    right: 2%;
+    transform: rotate(18deg);
+}
+
+.container {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Encabezado estilo Grafiti */
+.header {
+    padding: 2.5rem 1rem 1.5rem;
+    text-align: center;
+    border-bottom: 3px dashed var(--border-dark);
+    margin-bottom: 2rem;
+}
+
+.spray-badge {
+    display: inline-block;
+    background: var(--neon-pink);
+    color: #fff;
+    font-family: var(--font-graffiti);
+    font-size: 0.85rem;
+    padding: 0.2rem 0.8rem;
+    transform: rotate(-3deg);
+    margin-bottom: 0.5rem;
+    box-shadow: 3px 3px 0px #000;
+}
+
+.logo {
+    font-family: var(--font-dirty);
+    font-size: 4.5rem;
+    color: var(--neon-yellow);
+    line-height: 1;
+    letter-spacing: 4px;
+    text-shadow: 
+        4px 4px 0px var(--neon-pink),
+        -2px -2px 0px #000;
+    transform: rotate(-2deg);
+}
+
+.tagline {
+    font-family: var(--font-graffiti);
+    font-size: 1rem;
+    color: var(--text-primary);
+    margin-top: 0.75rem;
+    letter-spacing: 2px;
+}
+
+/* Titulos de Seccion */
+.graffiti-title {
+    font-family: var(--font-graffiti);
+    font-size: 1.6rem;
+    color: var(--neon-yellow);
+    margin-bottom: 1rem;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 0px #000;
+}
+
+/* Tarjetas estilo Stickers */
+.card {
+    background: var(--card-bg);
+    border: 2px solid var(--text-primary);
+    padding: 1.25rem;
+    margin-bottom: 2rem;
+    position: relative;
+    box-shadow: 6px 6px 0px var(--neon-pink);
+}
+
+.sticker-tilt-left {
+    transform: rotate(-1deg);
+}
+
+.sticker-tilt-right {
+    transform: rotate(0.7deg);
+}
+
+.tape {
+    width: 90px;
+    height: 22px;
+    background: rgba(234, 255, 0, 0.75);
+    position: absolute;
+    top: -11px;
+    left: 50%;
+    transform: translateX(-50%) rotate(2deg);
+}
+
+.loyalty-card h2 {
+    font-family: var(--font-graffiti);
+    font-size: 1.3rem;
+    color: var(--neon-yellow);
+    margin-bottom: 0.35rem;
+}
+
+.loyalty-status {
+    margin-top: 0.75rem;
+    font-weight: 700;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: #000;
+    border: 2px solid var(--text-primary);
+    margin-top: 0.5rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--neon-green);
+    transition: width 0.3s ease;
+}
+
+/* Cuadricula de Servicios */
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 2.25rem;
+}
+
+@media (min-width: 480px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.service-card {
+    background: var(--card-bg);
+    border: 2px solid var(--border-dark);
+    padding: 1.25rem;
+    cursor: pointer;
+    transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-3px) rotate(-1deg);
+    border-color: var(--text-secondary);
+}
+
+.service-card.selected {
+    border-color: var(--neon-yellow);
+    background: #1c1c22;
+    box-shadow: 5px 5px 0px var(--neon-yellow);
+    transform: rotate(-1deg);
+}
+
+.service-card h3 {
+    font-family: var(--font-graffiti);
+    font-size: 1.15rem;
+    color: var(--text-primary);
+    margin-bottom: 0.35rem;
+}
+
+.service-card p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.service-card .price {
+    display: inline-block;
+    margin-top: 0.75rem;
+    background: #000;
+    color: var(--neon-yellow);
+    font-family: var(--font-graffiti);
+    padding: 0.2rem 0.6rem;
+    font-size: 1rem;
+}
+
+/* Formulario */
+.booking-form {
+    background: var(--card-bg);
+    border: 2px solid var(--text-primary);
+    padding: 1.5rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 6px 6px 0px var(--neon-yellow);
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+label {
+    display: block;
+    font-family: var(--font-graffiti);
+    font-size: 0.95rem;
+    margin-bottom: 0.35rem;
+    color: var(--text-primary);
+    letter-spacing: 1px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="datetime-local"] {
+    width: 100%;
+    padding: 0.85rem;
+    background: #09090b;
+    border: 2px solid var(--border-dark);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--neon-yellow);
+}
+
+.error-message {
+    font-size: 0.8rem;
+    color: var(--neon-pink);
+    margin-top: 0.3rem;
+    display: block;
+    font-weight: 700;
+}
+
+.global-error {
+    color: var(--neon-pink);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.rules-box {
+    background: #09090b;
+    border-left: 4px solid var(--neon-pink);
+    padding: 0.9rem;
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+}
+
+.rules-box p:first-child {
+    margin-bottom: 0.4rem;
+}
+
+.rules-box strong {
+    color: var(--neon-yellow);
+}
+
+/* Botones */
+.btn-primary, .btn-secondary, .btn-whatsapp {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #000;
+    font-family: var(--font-graffiti);
+    font-size: 1.15rem;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    letter-spacing: 1.5px;
+    transition: transform 0.1s ease;
+}
+
+.btn-primary {
+    background: var(--neon-yellow);
+    color: #000;
+    box-shadow: 4px 4px 0px var(--neon-pink);
+}
+
+.btn-primary:active {
+    transform: translate(2px, 2px);
+}
+
+.btn-whatsapp {
+    background: var(--neon-green);
+    color: #000;
+    margin-bottom: 0.75rem;
+    box-shadow: 4px 4px 0px #000;
+}
+
+.btn-secondary {
+    background: var(--border-dark);
+    color: var(--text-primary);
+}
+
+/* Carrusel de Fotos al final */
+.gallery-section {
+    margin-top: 2rem;
+}
+
+.gallery-sub {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    border: 3px solid var(--text-primary);
+    background: #000;
+    box-shadow: 7px 7px 0px var(--neon-yellow);
+    overflow: hidden;
+}
+
+.carousel-track {
+    position: relative;
+    width: 100%;
+    height: 360px;
+}
+
+.carousel-slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-slide.active {
+    display: block;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: contrast(1.1) saturate(1.1);
+}
+
+.slide-caption {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background: var(--neon-pink);
+    color: #fff;
+    font-family: var(--font-graffiti);
+    font-size: 1rem;
+    padding: 0.3rem 0.9rem;
+    transform: rotate(-2deg);
+    box-shadow: 3px 3px 0px #000;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: var(--neon-yellow);
+    border: 2px solid var(--neon-yellow);
+    font-size: 1.25rem;
+    padding: 0.5rem 0.85rem;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background: var(--neon-yellow);
+    color: #000;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-top: 1rem;
+}
+
+.dot {
+    width: 14px;
+    height: 14px;
+    background: var(--border-dark);
+    border: 2px solid var(--text-primary);
+    cursor: pointer;
+}
+
+.dot.active {
+    background: var(--neon-yellow);
+    transform: rotate(45deg);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.88);
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    z-index: 1000;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: var(--card-bg);
+    border: 3px solid var(--neon-yellow);
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 8px 8px 0px var(--neon-pink);
+}
+
+.modal-content h3 {
+    font-family: var(--font-graffiti);
+    margin-bottom: 1rem;
+    color: var(--neon-yellow);
+    font-size: 1.5rem;
+}
+
+#modal-body {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+#modal-body ul {
+    margin-left: 1.25rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+}
